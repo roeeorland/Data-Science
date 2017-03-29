@@ -1,4 +1,4 @@
-rankall<-function(outcome,num="best")
+rankall_draft<-function(outcome,num="best")
 {
         measures<-read.csv("outcome-of-care-measures.csv", colClasses = "character")
         measures[]
