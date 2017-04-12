@@ -1,1 +1,27 @@
-##Reading APIs
+library(httr)
+oauth_endpoints("github")
+my_api<-oauth_app("RoeeApp",key="181eb2a5571016ef0ab5",secret = "209e9e68814305b3e5d7e35c5f753e8b28fb6068")
+my_app<-oauth_app("RoeeApp",key="181eb2a5571016ef0ab5",secret = "209e9e68814305b3e5d7e35c5f753e8b28fb6068")
+github_token<-oauth2.0_token(oauth_endpoints("github"),my_app)
+library(httpuv)
+install.packages("httpuv")
+library(httpuv)
+github_token<-oauth2.0_token(oauth_endpoints("github"),my_app)
+gtoken <- config(token = github_token)
+req()
+req<-GET("https://api.github.com/users/jtleek/repos",gtoken)
+req
+headers(req)
+library(jsonlite)
+json=content(req)
+json
+git_data_frame=jsonlite::fromJSON(jsonlite::toJSON(json))
+headers(git_data_frame)
+head(git_data_frame)
+View(git_data_frame)
+View(git_data_frame)
+View(git_data_frame)
+View(git_data_frame)
+View(git_data_frame)
+names(git_data_frame)
+git_data_frame[git_data_frame$full_name=="jtleek/datasharing","created_at"]
