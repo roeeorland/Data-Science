@@ -1,0 +1,13 @@
+con=url("http://biostat.jhsph.edu/~jleek/contact.html")
+htmlCode=readLines(con)
+htmlCode[1]
+htmlCode[2]
+htmlCode[3]
+dim(htmlCode)
+class(htmlCode)
+nchar(htmlCode[10])
+nchar(htmlCode[20])
+nchar(htmlCode[30])
+nchar(htmlCode[40])
+nchar(htmlCode[100])
+close(con)
