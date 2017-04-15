@@ -16,7 +16,7 @@ table(restData$isWrong)
 
 #Creating categories
 
-restData$zipGroups=cut(restData$zipCode,breaks = quantile(restData$zipCode))
+restData$zipGroups=cut(restData$zipCode,breaks = quantile(restData$zipCode)) ##cutting creates factors
 table(restData$zipGroups)
 min(restData$zipCode)
 table(restData$zipGroups,restData$zipCode)
@@ -29,4 +29,7 @@ quantile(restData$zipCode,c(0.0000001,0.5))
 
 library("Hmisc")
 restData$zipGroups=cut2(restData$zipCode,g=4)
+
+
+##standard math transforms in the PDF
 
