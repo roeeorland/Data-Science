@@ -6,3 +6,6 @@ activity_labels=read.table("./Project Files Dataset/UCI HAR Dataset/activity_lab
 convert_to_labels=function(x){as.character(activity_labels[x,2])}
 test_activities<-as.character(apply(y_test,1:length(y_test),convert_to_labels))
 train_activities<-as.character(apply(y_train,1:length(y_train),convert_to_labels))
+features=read.table("./Project Files Dataset/UCI HAR Dataset/features.txt")
+names(x_test)=features$V2
+names(x_train)=features$V2
